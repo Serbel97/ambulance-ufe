@@ -8,7 +8,7 @@ describe('xbelake-ambulance-wl-list', () => {
       html: `<xbelake-ambulance-wl-list></xbelake-ambulance-wl-list>`,
     });
 
-    const wlList = page.rootInstance as PfxAmbulanceWlList;
+    const wlList = page.rootInstance as XbelakeAmbulanceWlList;
     const expectedPatients = wlList?.waitingPatients?.length
 
     const items = page.root.shadowRoot.querySelectorAll("md-list-item");
