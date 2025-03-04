@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
   "generator-cli": {
-    "useDocker": true,
+    "useDocker": false,
     "version": "6.6.0",
     "generators": {
       "ambulance-wl": {
