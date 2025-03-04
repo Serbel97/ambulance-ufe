@@ -1,0 +1,7 @@
+apis/AmbulanceWaitingListApi.ts
+apis/index.ts
+index.ts
+models/Condition.ts
+models/WaitingListEntry.ts
+models/index.ts
+runtime.ts
