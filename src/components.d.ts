@@ -24,6 +24,16 @@ export namespace Components {
         "base-path"?: string;
     }
     interface XbelakeAmbulanceWlEditor {
+        "ambulanceId": string;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "ambulance-id"?: string;
+        "apiBase": string;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "api-base"?: string;
         "entryId": string;
         /**
          * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
@@ -117,6 +127,16 @@ declare namespace LocalJSX {
         "base-path"?: string;
     }
     interface XbelakeAmbulanceWlEditor {
+        "ambulanceId"?: string;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "ambulance-id"?: string;
+        "apiBase"?: string;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "api-base"?: string;
         "entryId"?: string;
         /**
          * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.

@@ -9,6 +9,7 @@ import '@material/web/button/filled-button'
 import '@material/web/button/filled-tonal-button'
 import '@material/web/button/outlined-button'
 import '@material/web/divider/divider'
+import '@material/web/iconbutton/filled-icon-button'
 
 import { registerNavigationApi } from './navigation.js'
 

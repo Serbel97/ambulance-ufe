@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Host, Prop, State, h } from '@stencil/core';
+import {Component, Event, EventEmitter, Host, Prop, State, h} from '@stencil/core';
 import {AmbulanceWaitingListApi, WaitingListEntry, Configuration} from '../../api/ambulance-wl';
 
 @Component({
@@ -45,7 +45,7 @@ export class XbelakeAmbulanceWlList {
           ? <div class="error">{this.errorMessage}</div>
           :
           <md-list>
-            {this.waitingPatients.map(patient =>
+            {this.waitingPatients.map((patient) =>
               <md-list-item onClick={() => this.entryClicked.emit(patient.id)}>
                 <div slot="headline">{patient.name}</div>
                 <div slot="supporting-text">{"Predpokladaný vstup: " + patient.estimatedStart?.toLocaleString()}</div>
@@ -54,6 +54,9 @@ export class XbelakeAmbulanceWlList {
             )}
           </md-list>
         }
+        <md-filled-icon-button className="add-button" onclick={() => this.entryClicked.emit("@new")}>
+          <md-icon>add</md-icon>
+        </md-filled-icon-button>
       </Host>
     );
   }

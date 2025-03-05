@@ -58,7 +58,9 @@ export class XbelakeAmbulanceWlApp {
       <Host>
         {element === "editor"
           ? <xbelake-ambulance-wl-editor entry-id={entryId}
-            oneditor-closed={() => navigate("./list")}>
+            ambulance-id={this.ambulanceId} api-base={this.apiBase}
+            oneditor-closed={() => navigate("./list")}
+          >
           </xbelake-ambulance-wl-editor>
           : <xbelake-ambulance-wl-list ambulance-id={this.ambulanceId} api-base={this.apiBase}
             onentry-clicked={(ev: CustomEvent<string>) => navigate("./entry/" + ev.detail)}>
