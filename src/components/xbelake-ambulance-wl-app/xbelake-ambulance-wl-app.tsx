@@ -41,6 +41,7 @@ export class XbelakeAmbulanceWlApp {
   }
 
   render() {
+    console.debug("xbelake-ambulance-wl-app.render() - path: %s", this.relativePath);
     let element = "list"
     let entryId = "@new"
 
