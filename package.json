@@ -38,7 +38,6 @@
     "start:app": "stencil build --dev --watch --serve",
     "start:mock": "run-s convert-openapi mock-api",
     "start": "run-p -r start:mock start:app",
-    "prebuild": "npm run openapi",
     "build": "stencil build",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
