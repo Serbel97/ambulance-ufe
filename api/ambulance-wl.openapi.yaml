@@ -7,7 +7,7 @@ info:
   version: "1.0.0"
   title: Waiting List Api
   contact:
-    email: your_email@stuba.sk
+    email: xbelake@stuba.sk
   license:
     name: CC BY 4.0
     url: "https://creativecommons.org/licenses/by/4.0/"
@@ -223,7 +223,7 @@ components:
   schemas:
     WaitingListEntry:
       type: object
-      required: [id, patientId, waitingSince, estimatedDurationMinutes]
+      required: [ id, patientId, waitingSince, estimatedDurationMinutes ]
       properties:
         id:
           type: string
