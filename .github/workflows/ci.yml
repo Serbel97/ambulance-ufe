@@ -16,18 +16,18 @@ jobs:
 
     runs-on: ubuntu-latest
     # Set up a Docker DinD service container
-    services:
-      docker:
-        image: docker:20.10.16-dind
-        options: --privileged --log-driver=none
-        env:
-          DOCKER_TLS_CERTDIR: ""
-        ports:
-          - 2375:2375
-
-    # Configure environment variable to point Docker CLI to DinD
-    env:
-      DOCKER_HOST: tcp://localhost:2375
+#    services:
+#      docker:
+#        image: docker:20.10.16-dind
+#        options: --privileged --log-driver=none
+#        env:
+#          DOCKER_TLS_CERTDIR: ""
+#        ports:
+#          - 2375:2375
+#
+#    # Configure environment variable to point Docker CLI to DinD
+#    env:
+#      DOCKER_HOST: tcp://localhost:2375
 
     strategy:
       matrix:
@@ -37,10 +37,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Prepare OpenAPI Spec
-        run: |
-          mkdir -p input-spec
-          cp api/ambulance-wl.openapi.yaml input-spec/ambulance-wl.openapi.yaml
+#      - name: Prepare OpenAPI Spec
+#        run: |
+#          mkdir -p input-spec
+#          cp api/ambulance-wl.openapi.yaml input-spec/ambulance-wl.openapi.yaml
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
