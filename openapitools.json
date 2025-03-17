@@ -6,7 +6,7 @@
     "generators": {
       "ambulance-wl": {
         "generatorName": "typescript-fetch"   ,
-        "glob": "api/ambulance-wl.openapi.yaml",
+        "glob": "input-spec",
         "output": "#{cwd}/src/api/ambulance-wl",
         "additionalProperties": {
           "supportsES6": "true",
