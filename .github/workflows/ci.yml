@@ -36,6 +36,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Prepare OpenAPI Spec
+        run: |
+          mkdir -p input-spec
+          cp api/ambulance-wl.openapi.yaml input-spec/ambulance-wl.openapi.yaml
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
