@@ -1,10 +1,10 @@
-import {Component, Host, Prop, State, h, EventEmitter, Event} from '@stencil/core';
+import {Component, Event, EventEmitter, h, Host, Prop, State} from '@stencil/core';
 import {
-  AmbulanceWaitingListApi,
   AmbulanceConditionsApi,
-  WaitingListEntry,
+  AmbulanceWaitingListApi,
+  Condition,
   Configuration,
-  Condition
+  WaitingListEntry
 } from '../../api/ambulance-wl';
 
 @Component({
@@ -151,7 +151,14 @@ export class XbelakeAmbulanceWlEditor {
                 <md-icon slot="leading-icon">person</md-icon>
               </md-filled-text-field>
 
-              <md-filled-text-field label="Registračné číslo pacienta">
+              <md-filled-text-field label="Registračné číslo pacienta"
+                required value={this.entry?.patientId}
+                oninput={(ev: InputEvent) => {
+                  if (this.entry) {
+                    this.entry.patientId = this.handleInputEvent(ev)
+                  }
+                }}>
+
                 <md-icon slot="leading-icon">fingerprint</md-icon>
               </md-filled-text-field>
 
@@ -161,7 +168,7 @@ export class XbelakeAmbulanceWlEditor {
               </md-filled-text-field>
               <md-filled-text-field disabled
                                     value={new Date(this.entry?.estimatedStart || Date.now()).toLocaleTimeString()}>
-                                    label="Predpokladaný čas vyšetrenia"
+                label="Predpokladaný čas vyšetrenia"
                 <md-icon slot="leading-icon">login</md-icon>
               </md-filled-text-field>
 
