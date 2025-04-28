@@ -139,6 +139,9 @@ export class XbelakeAmbulanceWlEditor {
           <div class="loading">Načítavam údaje...</div>
         ) : (
           <div>
+            <div class="editor-header">
+              <h2>{this.entryId === "@new" ? "Nový pacient" : "Úprava pacienta"}</h2>
+            </div>
             {/* Render the form fields */}
             <form ref={el => this.formElement = el}>
               <md-filled-text-field label="Meno a Priezvisko"
@@ -177,9 +180,11 @@ export class XbelakeAmbulanceWlEditor {
             </form>
 
             <div class="duration-slider">
-              <span class="label">Predpokladaná doba trvania:&nbsp; </span>
-              <span class="label">{this.duration}</span>
-              <span class="label">&nbsp;minút</span>
+              <div>
+                <span class="label">Predpokladaná doba trvania: </span>
+                <span class="label duration-value">{this.duration}</span>
+                <span class="label"> minút</span>
+              </div>
               <md-slider
                 min="2" max="45" value={this.entry?.estimatedDurationMinutes || 15} ticks labeled
                 oninput={(ev: InputEvent) => {
@@ -187,7 +192,6 @@ export class XbelakeAmbulanceWlEditor {
                     this.entry.estimatedDurationMinutes
                       = Number.parseInt(this.handleInputEvent(ev))
                   }
-                  ;
                   this.handleSliderInput(ev)
                 }}></md-slider>
             </div>
